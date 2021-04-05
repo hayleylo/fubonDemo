@@ -1,0 +1,29 @@
+// container
+$lg-maxWidth: 1920px; 
+$l-maxWidth: 992px;
+$m-maxWidth: 768px; 
+$sm-maxWidth: 414px; 
+
+@mixin max_md() {
+	@media all and (max-width: $m-maxWidth) {
+		@content;
+	}
+}
+
+@mixin min_md() {
+	@media all and (min-width: $m-maxWidth) {
+		@content;
+	}
+}
+
+@mixin max_sm() {
+	@media all and (max-width: $sm-maxWidth) {
+		@content;
+	}
+}
+
+@mixin min_sm() {
+	@media all and (min-width: $sm-maxWidth) {
+		@content;
+	}
+}

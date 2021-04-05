@@ -1,0 +1,43 @@
+extends layout.pug
+
+block content
+	#main-content
+		.container
+			.page-title 變更流程
+			- var values = [{stepDes: "由【富邦人壽官網】，點選『保戶會 員專區』登入。"},{stepDes: "點選『線上交易』 ★保戶需先申請成為交易會員方可於 網路 辦理變更。"},{stepDes: "點選後進入『多張保單地址/電話/ E-mail變更』作業。"},{stepDes: "確認顯示的行動電話及電子信箱是否 為最新資料，若需修改請點選 修 改。"},{stepDes: "請點選 即可輸入欲變更之內容"},{stepDes: ""},{stepDes: "請審閱重要提醒，確認無誤後請勾選 □我已了解並同意後，點選確認進入下 一步。"},{stepDes: "請確認本次辦理變更資料，是否傳送至其他保險公司申辦相同變更項目。"},{stepDes: "如同意傳送至其他保險公司，請選擇 欲傳送之保險公司(可複選)。 ★僅提供有加入試辦之保險公司，請 勾選有該公司保單之保險公司。"},{stepDes: "請審閱保全申請轉送暨個人資料告知 事項，審閱完成後，請點選□本人已 審閱蒐集、處理及利用個人資料告知 事項，如取消轉送，請點選『不同意 傳送』，可回至確認是否同意轉送頁 重新選擇。"},{stepDes: "輸入動態密碼，未收到動態密碼，可 點選重新發送動態密碼。"},{stepDes: "委託受理完成。可點選『列印內 容』，產出加密之PDF檔，密碼為要 保人身分證字號，第一個英文字母大 寫。"}];
+				each val, index in values
+					.step-block
+						.step-left
+							.step-title='步驟'+(index+1)+'：'
+							case (index+1)
+								when 4
+									.step-des
+										| 確認顯示的行動電話及電子信箱是否 為最新資料，若需修改請點選
+										img.img-fluid.icon(src="./images/editpen_icon.svg")
+										| 修改。
+								when 5
+									.step-des
+										| 請點選
+										img.img-fluid.icon(src="./images/editpen_icon.svg")
+										| 即可輸入欲變更之內容
+								when 6
+									.step-des
+										ul
+											li
+												span.list-label 1
+												span 確認變更內容
+											li 
+												span.list-label 2
+												span 點選
+													img.img-fluid.icon(src="./images/delete_btn.svg")
+													| ，即可刪除此項目
+											li
+												span.list-label 3
+												span 點選
+													img.img-fluid.icon(src="./images/editpen_icon.svg")
+													| ，可回此變更項目輸入修 改變更內容
+								default
+									.step-des=val.stepDes
+						.step-right
+							img.show-pc.img-fluid(src='./images/instructions/web/web'+(index+1)+'.png')
+							img.show-mobile.img-fluid(src='./images/instructions/mobile/mobile'+(index+1)+'.png')

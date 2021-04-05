@@ -1,0 +1,189 @@
+body {
+	font-family: Arial, Helvetica, 'Microsoft JhengHei', '微軟正黑體', sans-serif;
+	background-color: $body-color;
+	font-size: 16px;
+	line-height: 1.25;
+	* {
+		box-sizing: border-box;
+	}
+}
+
+header {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	border-top: 8px $primary solid;
+	box-shadow: 0px 2px 6px #0000000A;
+	background-color: white;
+	height: 84px;
+	width: 100%;
+	font-size: 16px;
+	z-index: 9999;
+	@include max_md {
+		border-top: 6px $primary solid;
+		height: 56px;
+	}
+}
+
+footer {
+	background: transparent linear-gradient(90deg, #00829B 0%, #009583 100%) 0% 0% no-repeat padding-box;
+	height: 87px;
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	@include max_md {
+		font-size: 16px;
+	}
+}
+
+.fubon-logo {
+	width: 204px;
+	height: 44px;
+		margin-top: 15px;
+	@include max_md {
+		width: 150px;
+		height: auto;
+		margin-top: 8px;
+		position: absolute;
+		left: 50%;
+		margin-left: -75px;
+	}
+}
+
+.line-home {
+	color: #505050;
+	margin-top: 20px;
+	@include max_md {
+		margin-top: 12px;
+	}
+}
+
+.icon-home {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#main-content {
+	max-width: 100%;
+	width: 1200px;
+	margin: 0 auto;
+	background-color: white;
+	box-shadow: 0px 3px 6px #00000029;
+	margin-top: 100px;
+	margin-bottom: 25px;
+	@include max_md { 
+		margin-top: 57px;
+	}
+}
+
+.page-title {
+	font-size: 27px;
+	padding-left: 12px;
+	margin-bottom: 15px;
+	font-weight: bold;
+	color: $primary;
+	border-left: $primary 8px solid;
+}
+
+.step-block {
+	position: relative;
+	letter-spacing: 0.36px;
+	margin-bottom: 15px;
+	padding-bottom: 15px;
+	border-bottom: 1px dashed #D5D5D5;
+	&:last-child {
+		border: 0;
+	}
+	.step-left {
+		width: 290px;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+	.step-right {
+		padding-left: 305px;
+		width: 100%;
+	}
+	.icon {
+		width: 14px;
+		height: 14px;
+	}
+	.list-label {
+		background-color: #F55A08;
+		width: 37px;
+		height: 19px;
+		border-radius: 5px;
+		text-align: center;
+		color: white;
+		display: inline-block;
+		margin-right: 5px;
+	}
+	@include max_md {
+		.step-left {
+			width: 100%;
+			position: initial;
+			margin-bottom: 15px;
+		}
+		.step-right {
+			padding-left: 0px;
+			text-align: center;
+		}
+	}
+}
+
+.step-title {
+	font-size: 18px;
+	letter-spacing: 0.36px;
+	color: #F55A08;
+	margin-bottom: 8px;
+	&:before {
+		content: '';
+		display: inline-block;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 6.5px 0 6.5px 15px;
+		border-color: transparent transparent transparent #F55A08;
+		margin-right: 5px;
+	}
+}
+
+.step-des {
+	color: #505050;
+	font-size: 18px;
+	padding-left: 20px;
+}
+
+#btn-top {
+	position: fixed;
+	z-index: 99;
+	right: 15px;
+	bottom: 15px;
+	background-color: #00829B50;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	cursor: pointer;
+	display: none;
+	&:before, &:after {
+		content: '';
+		display: inline-block;
+		background-color: white;
+		width: 3px;
+		height: 41%;
+		position: absolute;
+		top: 13px;
+		border-radius: 3px;
+	}
+	&:before {
+		transform: rotate(45deg);
+		left: 17px;
+	}
+	&:after {
+		transform: rotate(-45deg);
+		right: 17px;
+	}
+}
